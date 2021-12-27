@@ -14,7 +14,7 @@ class Solution:
                 #target may exist in the other half
                 else:
                     beg = mid + 1
-            #Situation where athe array from beg to end is rotated
+            #Situation where the array from beg to mid is rotated
             elif nums[mid] <= nums[beg]:
                 if target >= nums[mid] and target <= nums[end]:
                     beg = mid + 1
