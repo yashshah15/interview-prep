@@ -4,9 +4,7 @@ class Solution:
         
         left = 0
         right = len(nums) - 1
-        if len(nums) == 1:
-            return 0
-        
+
         while left < right:
             mid = left + (right - left) // 2
             
