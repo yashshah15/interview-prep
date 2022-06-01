@@ -1,17 +1,17 @@
+#O(1) Space solution
+#Calculate prefix product from left to right and use a variable to store the suffix product.
+#Calculate the result from right to left updating the right variable as suffix product 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        left = []
-        left.append(1)
         n = len(nums)
-        right  = [1] * (n)
+        res = [1] * n
+        right  = 1
+        
         for i in range(1, n):
-            left.append(left[i-1] * nums[i-1])
+            res[i] = res[i-1] * nums[i-1]
         
-        for i in range(n-2,-1,-1):
-            right[i] = right[i+1] * nums[i+1]
-        res = []
-        
-        for i in range(n):
-            res.append(left[i]*right[i])
+        for i in range(n-1, -1, -1):
+            res[i] = right * res[i]
+            right = right * nums[i]
         
         return res
