@@ -15,7 +15,6 @@ class Solution:
             else:
                 dp[i] = dp[i-1]
                 i=i+1
-            print(dp)
         return(dp[-1])
         
         
