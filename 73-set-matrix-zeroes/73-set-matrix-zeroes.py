@@ -18,7 +18,7 @@ class Solution:
         
         for i in range(1, rows):
             for j in range(1, cols):
-                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                if not matrix[i][0]  or not matrix[0][j]:
                     matrix[i][j] = 0
         
         if matrix[0][0] == 0:
