@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        
         res = [root.val]
         
         def dfs(root):
@@ -22,4 +23,3 @@ class Solution:
         
         dfs(root)
         return res[0]
-        
