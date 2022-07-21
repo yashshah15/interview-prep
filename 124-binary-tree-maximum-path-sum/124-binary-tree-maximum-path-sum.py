@@ -7,9 +7,10 @@
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
         
-        res = [root.val]
+        res = root.val
         
         def dfs(root):
+            nonlocal res
             if not root:
                 return 0
             left_max = dfs(root.left)
@@ -17,9 +18,9 @@ class Solution:
             left_max = max(0, left_max)
             right_max = max(0, right_max)
             
-            res[0] = max(res[0], root.val + left_max + right_max)
+            res = max(res, root.val + left_max + right_max)
             
             return root.val + max(left_max, right_max)
         
         dfs(root)
-        return res[0]
+        return res
